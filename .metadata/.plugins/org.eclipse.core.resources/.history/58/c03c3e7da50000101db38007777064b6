@@ -1,0 +1,19 @@
+package klu.modal;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import klu.repository.UserRepository;
+
+@Service
+public class UserManager {
+	@Autowired
+	UserRepository UR;
+	
+	//INSERT
+	public String insertData(User U)
+	{
+		UR.save(U); //INSERT INTO THE DATABASE
+		return "200::User has been Registered";
+	}
+}

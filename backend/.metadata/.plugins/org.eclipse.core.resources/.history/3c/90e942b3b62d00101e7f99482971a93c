@@ -1,0 +1,40 @@
+package klu.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import klu.modal.Ride;
+import service.RideService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/rides")
+@CrossOrigin(origins = "*") // Allow frontend calls
+public class RideController {
+
+    @Autowired
+    private RideService rideService;
+
+    @PostMapping("/share")
+    public Ride shareRide(@RequestBody Ride ride) {
+        return rideService.createRide(ride);
+    }
+
+    @GetMapping("/all")
+    public List<Ride> getAllRides() {
+        return rideService.getAllRides();
+    }
+
+    // Optional endpoint for distance calculation
+    @GetMapping("/distance")
+    public double getDistance(
+        @RequestParam double lat1,
+        @RequestParam double lon1,
+        @RequestParam double lat2,
+        @RequestParam double lon2
+    ) {
+        return rideService.calculateDistance(lat1, lon1, lat2, lon2);
+    }
+}

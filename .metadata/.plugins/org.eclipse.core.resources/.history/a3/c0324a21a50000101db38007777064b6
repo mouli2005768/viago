@@ -1,0 +1,19 @@
+package klu.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import klu.modal.User;
+import klu.modal.UserManager;
+
+public class UserController {
+	@Autowired
+	UserManager UM;
+	
+	@PostMapping("/signup")
+	public String signUp(@RequestBody User U)
+	{
+		return UM.insertData(U);
+	}
+}

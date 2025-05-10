@@ -1,0 +1,17 @@
+spring.application.name=viago
+
+spring.application.name=jobportal_backend
+
+#MYSQL CONFIGURATION
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/viago
+spring.datasource.username=root
+spring.datasource.password=Mouli@2006
+
+
+#JPA CONFIGURATION
+spring.jpa.hibernate.ddl-auto=update
+
+
+#PORT NUMBER
+server.port=5173

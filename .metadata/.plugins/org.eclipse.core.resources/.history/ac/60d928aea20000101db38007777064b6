@@ -1,0 +1,12 @@
+package klu.Repository;
+
+org.springframework.data.jpa.repository.JpaRepository;
+org.springframework.steereotype.repository;
+
+import klu.modal.User;
+
+
+@Repository
+public interface UserRepository extends JpaRepository<User, String>{
+
+}

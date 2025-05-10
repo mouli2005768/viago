@@ -1,0 +1,27 @@
+package klu.modal;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "user")
+public class User {
+	@Column(name = "Name")
+	String fullname;
+	
+	@Id
+	@Column(name = "phone")
+	String emailid;
+	
+	@Column(name = "gender")
+	int role;
+	
+	@Column(name = "password")
+	String password;
+	
+	@Column(name = "confirmPassword")
+	String confirmPassword;
+	
+}

@@ -1,0 +1,15 @@
+package klu.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import klu.modal.Ride;
+
+@Repository
+public interface RideRepository extends JpaRepository<Ride, Long> {
+
+	List<service.Ride> findAll();
+    // Add custom queries if needed
+}
